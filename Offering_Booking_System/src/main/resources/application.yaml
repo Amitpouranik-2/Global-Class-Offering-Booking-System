@@ -1,0 +1,44 @@
+server:
+  port: 8080
+  url: "http://localhost:8080"
+  description: "Local Tomcat Server"
+spring:
+  datasource:
+      url: jdbc:postgresql://localhost:5432/class_offering_system
+      username: postgres
+      password: postgres
+      driver-class-name: org.postgresql.Driver
+
+  jpa:
+    hibernate:
+      ddl-auto: update
+
+    show-sql: false
+    database: postgresql
+    database-platform: org.hibernate.dialect.PostgreSQLDialect
+    open-in-view: false
+    generate-ddl: true
+
+  servlet:
+    multipart:
+      max-file-size: 1MB
+      max-request-size: 1MB
+
+springdoc:
+  swagger-ui.path: /global-class-offering-documentation
+  api-docs.path: /global-class-offering-docs
+
+app:
+  jwt:
+    secret: "sfta6wfdwpqVlXSM9sON7cJoyJUGWroWCB6qi059sOZSPNwyhe8zzrNqUUtYAFsWO+twwWdwNsTDM2Pc69ApNw=="
+    expiration-ms: 3600000 # token timing
+
+token:
+  signing:
+    key: E46E022A78E65BF3C30B1200A4B695A95755A5219E4AAECDF94D47839F512D62
+  session:
+    timeout: 60
+
+logger:
+  level: info
+
